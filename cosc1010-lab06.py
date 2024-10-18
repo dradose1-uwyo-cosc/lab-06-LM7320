@@ -1,8 +1,8 @@
-# Your Name Here
+# Luke Jackson
 # UWYO COSC 1010
-# Submission Date
+# 10/20/24
 # Lab 06
-# Lab Section: 
+# Lab Section: 14
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -80,21 +80,63 @@ print(len(random_string)) # Print out the size for reference
     # Then increment its corresponding count 
 
 
+letters_occurrance = {}
+
+for i in range(len(random_string)):
+    x = 0
+    for letter in random_string:
+        if letter == random_string[i]:
+            x += 1
+    if random_string[i] not in letters_occurrance:
+        letters_occurrance[random_string[i]] = x
+print(sorted(letters_occurrance.items()))
+
+val = 0
+for value in letters_occurrance.values():
+    if value > val:
+        val = value
+    else: 
+        val = val
+
+for key, value in letters_occurrance.items():
+    if value == val:
+        print(f"{key} occures the most at {value} times")
+
+
+for value in letters_occurrance.values():
+    if value < val:
+        val = value
+    else: 
+        val = val
+
+for key, value in letters_occurrance.items():
+    if value == val:
+        print(f"{key} occures the least at {value} times")
+
+
+for key, value in sorted(letters_occurrance.items()):
+    percent = value / len(random_string)
+    print(f"{key} is {percent}% of the string")
+
+    
+
+
+
 #Load all the elements into a dictionary
 #Will need to first declare a dictionary 
 
 # Output: each letter and its corresponding occurrence in alphabetical order
 
-print("*"*75)
+    #print("*"*75)
 # Output which letter occurred the most 
 
-most_occurred = ""
-least_occurred = ""
+    #most_occurred = ""
+    #least_occurred = ""
 
-print(f"The letter that occurred the most is {most_occurred}")
-print("*"*75)
+    #print(f"The letter that occurred the most is {most_occurred}")
+    #print("*"*75)
 # Output which letter occurred the least 
-print(f"The letter that occurred the most is {least_occurred}")
-print("*"*75)
+    #print(f"The letter that occurred the most is {least_occurred}")
+    #print("*"*75)
 
 # Output what the percentage of the string each character is, again in alphabetical
